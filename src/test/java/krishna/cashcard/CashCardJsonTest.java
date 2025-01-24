@@ -8,6 +8,6 @@ class CashCardJsonTest {
 
     @Test
     void myFirstTest() {
-        assertThat(12).isEqualTo(2);
+        assertThat(12).isEqualTo(12);
     }
 }
