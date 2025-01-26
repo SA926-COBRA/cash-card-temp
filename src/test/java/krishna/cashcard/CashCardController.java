@@ -11,6 +11,7 @@ public class CashCardController {
 
     @GetMapping("/{requestedId}")
     private ResponseEntity<String> findById(){
-        return ResponseEntity.ok("{}");
+        CashCard cashCard = new CashCard(99L, 0.0);
+        return ResponseEntity.ok()
     }
 }
