@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cashcards")
 class CashCardController {
 
-    private final CashCardRepository CashCardRepository;
+    private final CashCardRepository cashCardRepository;
 
-    private CashCardController(CashCardRepository CashCardRepository){
-        this.CashCardRepository = CashCardRepository;
+    private CashCardController(CashCardRepository cashCardRepository) {
+        this.cashCardRepository = cashCardRepository;
     }
 
     @GetMapping("/{requestedId}")
     private ResponseEntity<CashCard> findById(@PathVariable Long requestedId) {
-        Optional<CashCard> cashCardOptional = CashCardRepository.findById(requestedId);
+        Optional<CashCard> cashCardOptional = cashCardRepository.findById(requestedId);
         if (cashCardOptional.isPresent()) {
             return ResponseEntity.ok(cashCardOptional.get());
         } else {
